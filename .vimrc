@@ -12,8 +12,10 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'junegunn/seoul256.vim'
+Plugin 'junegunn/fzf'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-surround'
 Plugin 'guns/vim-sexp'
@@ -23,18 +25,21 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Raimondi/delimitMate'
 Plugin 'chrisbra/csv.vim'
 Plugin 'tpope/vim-speeddating'
+Plugin 'maksimr/vim-jsbeautify'
 call vundle#end()
 " Vundle end ""
 
-filetype plugin indent on 
+filetype plugin indent on
                   " take a peek inside"
 
 syntax on         " syntax highlighting"
 syntax enable     " syntax highlighting"
 
 set ruler         " cursor position at bottom"
-set number        " line numbers"
+set nu            " line numbers"
+set rnu           " relative line numbers"
 set wildmenu      " tab auto-complete"
+set wildignore=*.swp,*.pyc,*.class " ignore file extensions in wildmenu"
 set tabstop=2     " num spaces for tabs"
 set shiftwidth=2  " num spaces for autoindent"
 set expandtab     " replace tabs with spaces"
@@ -50,32 +55,42 @@ set smartcase     " ignore case if search pattern is all lowercase"
                   " case sensitive otherwise
 set hlsearch      "highlight search
 set incsearch     " show search matches as you type"
+
 set history=1000  " more history"
-set undolevels=1000 
+set undolevels=1000
                   " more undos"
+
 set title         " change the title of the terminal"
-set textwidth=100  " make it obvious where 80 chars is"
+set textwidth=100 " make it obvious where 80 chars is"
 set cursorline    " highlight current line"
 
 set autoread      " reload files changed outside of vim"
-set encoding=utf-8 
+set encoding=utf-8
 set visualbell    " use visual bell instead of beeping when doing something wrong"
-set wildignore=*.swp,*.pyc,*.class 
-                  " ignore file extensions in wildmenu"
 
-"jsx 
-let g:jsx_ext_required=0  
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" jsx
+let g:jsx_ext_required=0
+
+" Trying solarized
+"syntax enable
+"set background=dark
+"colorscheme solarized
+"let g:solarized_termcolors=256
 
 " Seoul 256 / coloring
 colo seoul256
-set background=dark 
-let g:seoul256_background=236
+set background=dark
+let g:seoul256_background=233
+"let g:seoul256_current_fg
 
-"alvan/vim-closetag
+" alvan/vim-closetag
 let g:closetag_filenames="*.html,*.xhtml,*.js"
 
 "custom leader mappings
-let mapleader="," 
+let mapleader=","
 nnoremap <silent> <leader>z :bp<CR>
 nnoremap <silent> <leader>x :bn<CR>
 
