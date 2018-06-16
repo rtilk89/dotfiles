@@ -26,6 +26,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'chrisbra/csv.vim'
 Plugin 'tpope/vim-speeddating'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'vimwiki/vimwiki'
 call vundle#end()
 " Vundle end ""
 
@@ -36,7 +37,7 @@ syntax on         " syntax highlighting"
 syntax enable     " syntax highlighting"
 
 set ruler         " cursor position at bottom"
-set nu            " line numbers"
+set number        " line numbers"
 set rnu           " relative line numbers"
 set wildmenu      " tab auto-complete"
 set wildignore=*.swp,*.pyc,*.class " ignore file extensions in wildmenu"
@@ -89,8 +90,8 @@ let g:seoul256_background=233
 " alvan/vim-closetag
 let g:closetag_filenames="*.html,*.xhtml,*.js"
 
-"custom leader mappings
-let mapleader=","
+" custom leader and mappings
+let mapleader=" "
 nnoremap <silent> <leader>z :bp<CR>
 nnoremap <silent> <leader>x :bn<CR>
 
@@ -98,3 +99,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+nnoremap <tab>   }
+nnoremap <S-tab> {
+
+" do as I say not as I do
+map q: :q
+command! Q q
+command! W w
+command! Wq wq
