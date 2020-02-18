@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'ianks/vim-tsx'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
@@ -27,22 +28,24 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'tpope/vim-speeddating'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'vimwiki/vimwiki'
+Plugin 'mattn/calendar-vim'
 call vundle#end()
 " Vundle end ""
-
 filetype plugin indent on
                   " take a peek inside"
 
 syntax on         " syntax highlighting"
 syntax enable     " syntax highlighting"
 
+set backspace=2   " have the backspace work in insert mode"
+                  " set backspace=indent,eol,start
 set ruler         " cursor position at bottom"
 set number        " line numbers"
 set rnu           " relative line numbers"
 set wildmenu      " tab auto-complete"
 set wildignore=*.swp,*.pyc,*.class " ignore file extensions in wildmenu"
-set tabstop=2     " num spaces for tabs"
-set shiftwidth=2  " num spaces for autoindent"
+set tabstop=4     " num spaces for tabs"
+set shiftwidth=4  " num spaces for autoindent"
 set expandtab     " replace tabs with spaces"
 set equalalways   " new panes are equal sizes"
 set autoindent    " always set autoindeing on"
@@ -60,6 +63,8 @@ set incsearch     " show search matches as you type"
 set history=1000  " more history"
 set undolevels=1000
                   " more undos"
+set undodir=~/.vim/undo-dir
+set undofile
 
 set title         " change the title of the terminal"
 set textwidth=100 " make it obvious where 80 chars is"
@@ -82,18 +87,24 @@ let g:jsx_ext_required=0
 "let g:solarized_termcolors=256
 
 " Seoul 256 / coloring
-colo seoul256
-set background=dark
-let g:seoul256_background=233
+"colo seoul256
+"set background=dark
+"let g:seoul256_background=233
 "let g:seoul256_current_fg
 
 " alvan/vim-closetag
 let g:closetag_filenames="*.html,*.xhtml,*.js"
 
+" vimwiki
+let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+
 " custom leader and mappings
 let mapleader=" "
 nnoremap <silent> <leader>z :bp<CR>
 nnoremap <silent> <leader>x :bn<CR>
+nnoremap <leader>E :Explore<CR>
+nnoremap <leader>t :term<CR>
+nnoremap <leader>\ :noh<CR>
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -108,3 +119,7 @@ map q: :q
 command! Q q
 command! W w
 command! Wq wq
+
+function! Clear()
+    let @/ = ''
+endfunction
