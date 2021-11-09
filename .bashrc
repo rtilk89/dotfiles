@@ -73,7 +73,7 @@ edaemon() {
     if [[ -n $pid ]]; then
         echo 'daemon running'
     else
-        echo 'starting emacs daemon'
+        echo 'starting emacs daemon' && emacs --daemon
     fi
 }
 
