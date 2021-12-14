@@ -69,4 +69,4 @@
 ;; Make mouse scroll work
 (remove-hook 'tty-setup-hook #'xterm-mouse-mode)
 
-(setq workspaces-on-switch-project-behavior 'nil)
+(setq +workspaces-on-switch-project-behavior 'nil)
