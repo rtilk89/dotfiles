@@ -69,4 +69,8 @@
 ;; Make mouse scroll work
 (remove-hook 'tty-setup-hook #'xterm-mouse-mode)
 
+;; Be able to switch projects with multiple windows open
 (setq +workspaces-on-switch-project-behavior 'nil)
+
+;; Case insensative search
+(setq case-fold-search t)
