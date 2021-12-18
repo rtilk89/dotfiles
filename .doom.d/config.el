@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Ryan Thielke"
-      user-mail-address "rthielke@decisiohealth.com")
+      user-mail-address "r.tilky@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -55,7 +55,7 @@
 ;;
 
 ;; projectile
-(setq projectile-project-search-path '("~/projects/code"))
+;;TODO (setq projectile-project-search-path '("~/projects/code"))
 (setq projectile-completion-system 'ivy)
 
 ;; Other keybindings
