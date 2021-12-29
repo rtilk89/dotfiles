@@ -87,3 +87,6 @@ restart_edaemon() {
         echo "cannot restart the emacs daemon"
     fi
 }
+
+# Bash completions
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
