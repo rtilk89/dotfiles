@@ -74,3 +74,11 @@
 
 ;; Case insensative search
 (setq case-fold-search t)
+
+(map! "<C-O>" #'evil-jump-forward)
+
+(use-package flycheck
+  :config
+  (global-flycheck-mode))
+
+(setq flycheck-check-syntax-automatically '(mode-enabled save))
