@@ -64,7 +64,10 @@
        :desc "Bookmarks" "b" #'eww-list-bookmarks
        :desc "Add Bookmark" "a" #'eww-add-bookmark
        :desc "Search" "s" #'eww
-       :desc "Back" "H" #'eww-back-url))
+       :desc "Back" "H" #'eww-back-url)
+
+      (:prefix-map ("g" . "git")
+       :desc "Blame-Quit" "Q" #'magit-blame-quit))
 
 ;; Make mouse scroll work
 (remove-hook 'tty-setup-hook #'xterm-mouse-mode)
