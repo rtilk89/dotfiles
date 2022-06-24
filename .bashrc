@@ -38,11 +38,11 @@ alias e='emacs-26.1 -nw'
 alias rb='. ~/.bash_profile'
 alias eb='e ~/.bash_profile'
 alias ee='e ~/.emacs'
-# Time to learn spacemacs/emacs
 alias vim='emacsclient -nw'
 alias vi='emacsclient -nw'
 #alias vi='/usr/bin/vim'
 #alias v='/usr/bin/vim'
+alias doom="~/.emacs.d/bin/doom"
 
 
 # History
